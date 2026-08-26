@@ -1,0 +1,3 @@
+-keep class livekit.** { *; }
+-keep class org.webrtc.** { *; }
+-dontwarn org.webrtc.**

@@ -1,0 +1,2 @@
+1. sending history chat for ai in 
+feature_chat\domain\repositories\streamchat_repository.dart

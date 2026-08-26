@@ -1,0 +1,47 @@
+//
+//  Generated file. Do not edit.
+//
+
+// clang-format off
+
+#include "generated_plugin_registrant.h"
+
+#include <audioplayers_windows/audioplayers_windows_plugin.h>
+#include <connectivity_plus/connectivity_plus_windows_plugin.h>
+#include <firebase_app_check/firebase_app_check_plugin_c_api.h>
+#include <firebase_auth/firebase_auth_plugin_c_api.h>
+#include <firebase_core/firebase_core_plugin_c_api.h>
+#include <flutter_sound/flutter_sound_plugin_c_api.h>
+#include <flutter_webrtc/flutter_web_r_t_c_plugin.h>
+#include <livekit_client/live_kit_plugin.h>
+#include <permission_handler_windows/permission_handler_windows_plugin.h>
+#include <record_windows/record_windows_plugin_c_api.h>
+#include <speech_to_text_windows/speech_to_text_windows.h>
+#include <url_launcher_windows/url_launcher_windows.h>
+
+void RegisterPlugins(flutter::PluginRegistry* registry) {
+  AudioplayersWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("AudioplayersWindowsPlugin"));
+  ConnectivityPlusWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("ConnectivityPlusWindowsPlugin"));
+  FirebaseAppCheckPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FirebaseAppCheckPluginCApi"));
+  FirebaseAuthPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FirebaseAuthPluginCApi"));
+  FirebaseCorePluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FirebaseCorePluginCApi"));
+  FlutterSoundPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterSoundPluginCApi"));
+  FlutterWebRTCPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterWebRTCPlugin"));
+  LiveKitPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("LiveKitPlugin"));
+  PermissionHandlerWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("PermissionHandlerWindowsPlugin"));
+  RecordWindowsPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("RecordWindowsPluginCApi"));
+  SpeechToTextWindowsRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("SpeechToTextWindows"));
+  UrlLauncherWindowsRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("UrlLauncherWindows"));
+}
