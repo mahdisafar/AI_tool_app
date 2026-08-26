@@ -50,7 +50,7 @@ android/app/profile/
 android/app/release/
 ios/Pods/
 ios/Runner/xcshareddata/
-
+livekit_backend.py
 # Symbolication & Obfuscation
 app.*.symbols
 app.*.map.json
