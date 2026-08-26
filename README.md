@@ -2,9 +2,7 @@
 
 A Flutter application designed for daily AI-powered workflows: message rewriting, task generation, streaming text chat, and real-time voice interactions.
 
-<p align="center">
-  <img src="assets/images/logo.png" width="120" alt="AI App Logo"/>
-</p>
+
 
 ---
 
