@@ -1,5 +1,5 @@
 name: ai_app
-description: "A AI Chat Application for Language Learning with BLoC and Dio"
+
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -77,7 +77,7 @@ dev_dependencies:
   mocktail: ^1.0.5
   injectable_generator: ^2.6.2
 
-# این بخش برای حل باگ نسخه های ناسازگار record در لینوکس/اندروید اضافه شد
+
 dependency_overrides:
   record_platform_interface: 1.1.0
   record_android: 1.0.3
