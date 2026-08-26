@@ -18,7 +18,7 @@ config.env
 *config.env
 
 # Demo & Media Files (prevents pushing large recordings)
-*.mp4
+
 *.mov
 *.avi
 *.gif
