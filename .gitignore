@@ -55,3 +55,6 @@ livekit_backend.py
 app.*.symbols
 app.*.map.json
 /coverage/
+firebase.json
+livekit_backend.py
+pubspec.lock
