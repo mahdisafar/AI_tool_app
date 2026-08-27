@@ -33,7 +33,7 @@ class _TaskDetailBoxState extends State<TaskDetailBox> {
       resizeDuration: const Duration(milliseconds: 300),
       movementDuration: const Duration(milliseconds: 200),
 
-      // ظاهر پشت کارت هنگام کشیدن به سمت راست برای حذف
+      
       background: Container(
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class _TaskDetailBoxState extends State<TaskDetailBox> {
       ),
 
       confirmDismiss: (direction) async {
-        // اینجا می‌توانید در آینده دیالوگ تایید حذف بگذارید
+        
         return true;
       },
 
@@ -114,7 +114,7 @@ class _TaskDetailBoxState extends State<TaskDetailBox> {
   }
 }
 
-// تابع نمایش دیالوگ جزئیات
+
 void _showTaskDetails(BuildContext context, String title, String description) {
   showDialog(
     context: context,
@@ -190,7 +190,7 @@ class MicOnhold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpandableFab(
-      key: fabKey, // از کلیدی که از خارج می آید استفاده می کنیم
+      key: fabKey, 
       distance: 100,
       type: ExpandableFabType.up,
       overlayStyle: ExpandableFabOverlayStyle(blur: 5),

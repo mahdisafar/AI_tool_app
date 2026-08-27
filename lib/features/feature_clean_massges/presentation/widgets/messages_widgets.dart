@@ -2,7 +2,7 @@ import 'package:ai_app/core/constants/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../core/widgets/customsnackbar.dart'; // ۱. این ایمپورت اضافه شد
+import '../../../../core/widgets/customsnackbar.dart'; 
 
 Widget squareMessages(
   BuildContext context, {
@@ -62,7 +62,7 @@ Widget squareMessages(
             ),
           ),
           const SizedBox(height: 8),
-          // ۲. چیدمان دکمه‌ها کنار هم (کپی + حذف)
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -125,7 +125,7 @@ void _showTaskDetails(BuildContext context, String title, String description) {
                   ),
                 ),
                 const SizedBox(height: 20),
-                // ۳. دکمه کپی در دایالوگ
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

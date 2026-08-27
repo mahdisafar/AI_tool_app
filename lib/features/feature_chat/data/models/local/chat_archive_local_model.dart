@@ -2,10 +2,10 @@ import 'package:hive/hive.dart';
 import '../../../domain/entities/chat_archives_entity.dart';
 import 'chat_message_local_model.dart';
 
-// اتصال به فایل جنریت‌شونده
+
 part 'chat_archive_local_model.g.dart';
 
-@HiveType(typeId: 1) // آیدی یک برای آرشیو (نباید تکراری باشه)
+@HiveType(typeId: 1) 
 class ChatArchiveLocalModel {
   @HiveField(0)
   final String id;

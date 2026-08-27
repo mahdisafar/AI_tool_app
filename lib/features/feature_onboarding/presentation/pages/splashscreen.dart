@@ -11,18 +11,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // استفاده از Container برای ایجاد پس‌زمینه حرفه‌ای‌تر
+      
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          // ایجاد یک گرادینت دایره‌ای که مرکز آن کمی روشن‌تر است
+          
           gradient: RadialGradient(
             center: Alignment.center,
             radius: 0.8,
             colors: [
-              Color(0xFF1A2A4D), // آبی کمی روشن‌تر در مرکز (پشت لوگو)
-              Color(0xFF050B18), // آبی خیلی تیره در لبه‌ها
+              Color(0xFF1A2A4D), 
+              Color(0xFF050B18), 
             ],
           ),
         ),
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
               return Opacity(
                 opacity: value,
                 child: Transform.scale(
-                  scale: 0.8 + (value * 0.2), // از سایز 0.8 به 1.0 می‌رسد
+                  scale: 0.8 + (value * 0.2), 
                   child: child,
                 ),
               );
@@ -42,14 +42,14 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // نمایش لوگوی شفاف شما
+                
                 Image.asset(
                   'assets/images/logo.png',
-                  width: 220, // سایز لوگو را اینجا تنظیم کنید
+                  width: 220, 
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 30),
-                // نمایش یک لودینگ ظریف زیر لوگو (اختیاری)
+                
                 const SizedBox(
                   width: 40,
                   height: 2,

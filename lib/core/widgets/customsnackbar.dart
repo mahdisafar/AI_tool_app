@@ -9,20 +9,20 @@ class CustomSnackBar {
     final snackBar = SnackBar(
       elevation: 0,
       behavior: SnackBarBehavior.fixed,
-      backgroundColor: Colors.transparent, // شفاف برای حالت شیشه‌ای
+      backgroundColor: Colors.transparent, 
       content: ClipRRect(
-        borderRadius: BorderRadius.circular(15), // گوشه‌های کمی گرد
+        borderRadius: BorderRadius.circular(15), 
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // افکت تاری شیشه
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), 
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               color: isError
                   ? Colors.redAccent.withOpacity(0.2)
-                  : Colors.white.withOpacity(0.1), // رنگ ملایم پس‌زمینه
+                  : Colors.white.withOpacity(0.1), 
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
-                color: Colors.white.withOpacity(0.2), // لبه‌های براق شیشه
+                color: Colors.white.withOpacity(0.2), 
                 width: 1.5,
               ),
             ),
@@ -40,7 +40,7 @@ class CustomSnackBar {
                       color: Constants.blackColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      fontFamily: 'Lalezar', // یا هر فونتی که داری
+                      fontFamily: 'Lalezar', 
                     ),
                   ),
                 ),

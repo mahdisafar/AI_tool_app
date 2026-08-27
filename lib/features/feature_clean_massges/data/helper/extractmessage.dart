@@ -1,5 +1,5 @@
 Map<String, String>? extractMessageDetails(String response) {
-  // این نسخه نسبت به فضاهای خالی و خطوط اضافه منعطف‌تر است
+  
   final RegExp regex = RegExp(
     r'STYLE:\s*(.*)\s*TITLE:\s*(.*)\s*BODY:\s*([\s\S]*)',
     caseSensitive: false,

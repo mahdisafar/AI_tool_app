@@ -30,10 +30,10 @@ class MaketaskLocalModel extends MaketaskEntity {
           desc: entity.desc);
 }
 
-// کلاسی که جایگزین build_runner می‌شود
+
 class MaketaskLocalModelAdapter extends TypeAdapter<MaketaskLocalModel> {
   @override
-  final int typeId = 2; // همان آیدی که قبلا دادی
+  final int typeId = 2; 
 
   @override
   MaketaskLocalModel read(BinaryReader reader) {

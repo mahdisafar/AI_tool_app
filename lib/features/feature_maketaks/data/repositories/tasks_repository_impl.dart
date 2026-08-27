@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; // اضافه شده برای لاگ
+import 'package:flutter/material.dart'; 
 import 'package:ai_app/core/resources/data_state.dart';
 import 'package:ai_app/features/feature_maketaks/data/models/maketask_model/local/maketask_localmodel.dart';
 import 'package:ai_app/features/feature_maketaks/domain/entities/maketask_entity.dart';
@@ -8,7 +8,7 @@ import '../datasources/hive_services.dart';
 import '../models/maketask_model/local/task_list_local_model.dart';
 import 'package:injectable/injectable.dart';
 
-// @Injectable(as: TasksRepository) برای پیاده‌سازی TasksRepository
+
 // @lazySingleton
 @Injectable(as: TasksRepository)
 @lazySingleton
@@ -66,19 +66,19 @@ class TasksRepositoryImpl extends TasksRepository {
     try {
       debugPrint('➕ Repo: Adding tasks to list [$id]');
 
-      // ۱. تبدیل مستقیم تمام تسک‌هایی که از Bloc آمده به مدل دیتابیس
-      // این لیست خودش شامل همه تسک‌های فعلی است
+      
+      
       final List<MaketaskLocalModel> finalModels =
           newTasks.map((e) => MaketaskLocalModel.fromEntity(e)).toList();
 
-      // ۲. ذخیره مستقیم در Hive (جایگزین کردن لیست قبلی)
-      // Hive بر اساس ID، لیست قبلی را پاک و این لیست جدید را جایگزین می‌کند
+      
+      
       await hiveService
           .saveOrUpdateTaskList(TaskListLocalModel(id: id, tasks: finalModels));
 
       debugPrint('✅ Repo: Task(s) added successfully to ID: $id');
 
-      // برگرداندن انتیتی به لایه بالاتر
+      
       return DataSuccess(TaskListEntity(id: id, tasks: newTasks));
     } catch (e) {
       debugPrint('❌ Repo Add Task Error: $e');

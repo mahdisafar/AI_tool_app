@@ -4,6 +4,22 @@ A Flutter application designed for daily AI-powered workflows: message rewriting
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## Key Features
@@ -29,7 +45,7 @@ Rewrites user messages using the Qwen model via GapGPT. Supports multiple tone p
 Outputs are stored locally in Hive with options to refresh or delete entries.
 
 <p align="center">
-  <video src="assets/demo/clean_message.mp4" width="360" controls playsinline muted></video>
+  <video src="https://github.com/user-attachments/assets/38688942-c3ac-44d4-9310-5b49296973dc" width="360" controls playsinline muted></video>
 </p>
 
 ---
@@ -39,7 +55,7 @@ Outputs are stored locally in Hive with options to refresh or delete entries.
 Converts raw text into structured task items (Title + Description) using system prompts. Features swipe-to-delete, input dialogs, expandable FABs, and persistent storage via Hive.
 
 <p align="center">
-  <video src="assets/demo/maketask.mp4" width="360" controls playsinline muted></video>
+  <video src="https://github.com/user-attachments/assets/00691dcf-5353-4867-a5b8-be13276413be" width="360" controls playsinline muted></video>
 </p>
 
 ---
@@ -49,7 +65,7 @@ Converts raw text into structured task items (Title + Description) using system 
 Interactive streaming text chat leveraging Hugging Face (`Qwen/Qwen2.5-7B-Instruct`). Includes multi-chat archive drawer, conversation history, and prepared support for multimodal inputs (`image_url`).
 
 <p align="center">
-  <video src="assets/demo/chat.mp4" width="360" controls playsinline muted></video>
+  <video src="https://github.com/user-attachments/assets/71cdd154-b8c1-4126-9f83-b0bebd021574" width="360" controls playsinline muted></video>
 </p>
 
 ---
@@ -59,7 +75,7 @@ Interactive streaming text chat leveraging Hugging Face (`Qwen/Qwen2.5-7B-Instru
 Real-time voice conversation powered by LiveKit. Handles backend token generation, dynamic audio visualizers, microphone controls, and real-time status updates (*connecting*, *listening*, *thinking*, *speaking*).
 
 <p align="center">
-  <video src="assets/demo/live_chat.mp4" width="360" controls playsinline muted></video>
+  <video src="https://github.com/user-attachments/assets/d73b1882-2bb2-4438-888f-e18edc9ba67a" width="360" controls playsinline muted></video>
 </p>
 
 ---

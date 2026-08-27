@@ -10,12 +10,12 @@ void showDeleteDialog(BuildContext context,
         content: const Text('آیا از حذف این آیتم مطمئن هستید؟',
             textDirection: TextDirection.rtl),
         actions: [
-          // دکمه انصراف
+          
           TextButton(
-            onPressed: () => Navigator.of(context).pop(), // بستن دیالوگ
+            onPressed: () => Navigator.of(context).pop(), 
             child: const Text('نه'),
           ),
-          // دکمه تایید
+          
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
             onPressed: onPressed,

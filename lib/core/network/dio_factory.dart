@@ -12,20 +12,20 @@ class DioFactory {
       validateStatus: (status) => status! < 500,
       headers: {
         'Authorization':
-            'Bearer ${apiKey.trim()}', // اضافه کردن trim برای حذف هرگونه فاصله احتمالی
+            'Bearer ${apiKey.trim()}', 
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
     ));
 
-    // --- بای‌پس کردن SSL ---
+    
     (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
       HttpClient client = HttpClient();
       client.badCertificateCallback = (cert, host, port) => true;
       return client;
     };
 
-    // --- اینترسپتور برای دیباگ دقیق ---
+    
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) {
         debugPrint("\n--- 📝 AI REQUEST ---");
@@ -38,7 +38,7 @@ class DioFactory {
         debugPrint("\n--- 📥 SERVER RESPONSE ---");
         debugPrint("📊 Status: ${response.statusCode}");
         debugPrint(
-            "📄 Data: ${response.data}"); // اینجا کل پاسخ را بدون هیچ پیش‌فرضی چاپ می‌کنیم
+            "📄 Data: ${response.data}"); 
         return handler.next(response);
       },
       onError: (DioException e, handler) {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-// انام برای مدیریت راحت‌تر وضعیت‌ها
+
 enum ChatStatus {
-  pleaseTalk, // لطفا صحبت کنید
-  listening, // در حال گوش دادن
-  thinking, // در حال فکر کردن
-  responding, // در حال پاسخگویی
-  error, // 🎯 اضافه شد: وضعیت خطا
-  idle // وضعیت عادی
+  pleaseTalk, 
+  listening, 
+  thinking, 
+  responding, 
+  error, 
+  idle 
 }
 
 class VoiceStatusCircle extends StatelessWidget {
@@ -19,10 +19,10 @@ class VoiceStatusCircle extends StatelessWidget {
     super.key,
     this.status = ChatStatus.idle,
     this.isLoading = false,
-    this.size = 220, // قطر دایره بزرگ
+    this.size = 220, 
   });
 
-  // متد کمکی برای ترجمه استیت به متن فارسی
+  
   String _getStatusText() {
     switch (status) {
       case ChatStatus.pleaseTalk:
@@ -33,14 +33,14 @@ class VoiceStatusCircle extends StatelessWidget {
         return 'در حال فکر کردن...';
       case ChatStatus.responding:
         return 'در حال پاسخگویی...';
-      case ChatStatus.error: // 🎯 اضافه شد
+      case ChatStatus.error: 
         return 'بروز خطا!\nمجدداً تلاش کنید';
       case ChatStatus.idle:
         return 'آماده به کار';
     }
   }
 
-  // متد کمکی برای تغییر رنگ دایره بر اساس اتمسفر استیت
+  
   Color _getCircleColor(BuildContext context) {
     switch (status) {
       case ChatStatus.listening:
@@ -49,7 +49,7 @@ class VoiceStatusCircle extends StatelessWidget {
         return Colors.purple;
       case ChatStatus.responding:
         return Colors.green;
-      case ChatStatus.error: // 🎯 اضافه شد
+      case ChatStatus.error: 
         return Colors.red;
       default:
         return Theme.of(context).primaryColor;
@@ -62,7 +62,7 @@ class VoiceStatusCircle extends StatelessWidget {
 
     return AnimatedContainer(
       duration:
-          const Duration(milliseconds: 400), // انیمیشن نرم موقع تغییر وضعیت
+          const Duration(milliseconds: 400), 
       width: size,
       height: size,
       decoration: BoxDecoration(
@@ -93,7 +93,7 @@ class VoiceStatusCircle extends StatelessWidget {
                   child: Text(
                     _getStatusText(),
                     key: ValueKey(
-                        _getStatusText()), // برای انیمیشن روان تغییر متن
+                        _getStatusText()), 
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 18,

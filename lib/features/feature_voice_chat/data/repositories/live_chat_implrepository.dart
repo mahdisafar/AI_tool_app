@@ -38,10 +38,10 @@ class LiveChatImplRepository extends LiveChatRepository {
   @override
   Future<DataState<bool>> startSession() async {
     try {
-      // مستقیم با توکن و URL خودت اتصال رو برقرار کن
+      
       await livekit.startSession(
         url: Aiapi.livekitUrl,
-        token: Aiapi.livekitTestToken, // یا همون توکنی که داری
+        token: Aiapi.livekitTestToken, 
       );
 
       print('✅ startSession: Success');

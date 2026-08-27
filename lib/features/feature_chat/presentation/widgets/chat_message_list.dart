@@ -33,9 +33,9 @@ class _ChatMessageListState extends State<ChatMessageList> {
         return Center(child: Text("خطا در بارگذاری پیام‌ها: "));
       }
       List<ChatMessageEntity> displayMessages = [
-        // اگه هوش مصنوعی در حال تایپ بود، بذارش عنصر اول (پایین‌ترین جای صفحه)
+        
         if (chatState.streamingMessage != null) chatState.streamingMessage!,
-        // بعدش تمام پیام‌های تاریخچه رو پخش کن
+        
         ...chatState.messages,
       ];
       if (displayMessages.isEmpty) {
@@ -51,7 +51,7 @@ class _ChatMessageListState extends State<ChatMessageList> {
           bottom: 110,
         ),
         controller: widget.scrollController,
-        reverse: true, // هماهنگ با ساختار ریورس دش‌چت
+        reverse: true, 
         itemCount: displayMessages.length,
         itemBuilder: (context, index) {
           final msg = displayMessages[index];

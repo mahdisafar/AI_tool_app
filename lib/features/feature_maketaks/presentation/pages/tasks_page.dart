@@ -73,10 +73,10 @@ class _TasksPageState extends State<TasksPage> {
               context.read<FeatureTasksBloc>().add(ResetMtStatusEvent());
             }
 
-            // اصلاح این بخش:
+            
             else if (state.mtStatus is MtError) {
               String errorMessage = "خطایی رخ داد";
-              // چک کنید که آیا واقعا tlStatus خطا دارد یا خود mtStatus
+              
               if (state.tlStatus is TlError) {
                 errorMessage = (state.tlStatus as TlError).message;
               }

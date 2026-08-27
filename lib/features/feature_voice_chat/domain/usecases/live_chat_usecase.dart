@@ -64,7 +64,7 @@ class DisposeEveryThingUseCase extends UseCase {
 
   @override
   Future<DataState> call(param) async {
-    // اول میکروفون رو قطع می‌کنیم بعد کلاً از سشن خارج می‌شیم
+    
     await repo.diconnectMic();
     final result = await repo.endCall();
     if (result is DataSuccess) return DataSuccess(null);

@@ -5,7 +5,7 @@ class TlLoading extends TlStatus {}
 class TlInitial extends TlStatus {}
 
 class TlCompleted extends TlStatus {
-  final dynamic data; // دیتای شما اینجاست!
+  final dynamic data; 
   TlCompleted(this.data);
 }
 

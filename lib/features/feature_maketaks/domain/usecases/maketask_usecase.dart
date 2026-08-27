@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import '../repositories/maketaks_repository.dart';
 
-// @lazySingleton برای Use Case ساخت تسک
+
 @lazySingleton
 class MaketaskUsecase extends UseCase<DataState<MaketaskEntity>, String> {
   final MaketaksRepository maketaksRepository;

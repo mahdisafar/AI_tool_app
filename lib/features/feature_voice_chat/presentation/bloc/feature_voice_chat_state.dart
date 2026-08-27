@@ -8,7 +8,7 @@ abstract class FeatureVoiceChatState extends Equatable {
 
 class VoiceSessionActiveState extends FeatureVoiceChatState {
   final VoiceSessionData sessionData;
-  final bool isMicEnabled; // ✅ اضافه شد
+  final bool isMicEnabled; 
 
   const VoiceSessionActiveState(this.sessionData, {this.isMicEnabled = false});
 

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart' show debugPrint;
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
-// @lazySingleton برای سرویس Hive Clean Messages
+
 @lazySingleton
 class ClnHive extends HiveObject {
   static const String boxName = 'Cln_lists_box';

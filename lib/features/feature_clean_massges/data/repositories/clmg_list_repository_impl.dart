@@ -5,10 +5,10 @@ import 'package:ai_app/features/feature_clean_massges/domain/repositories/clmg_l
 import '../datasources/cln_hive.dart';
 import '../models/local/cln_mg_list_local_model.dart';
 import '../models/local/cln_mg_local_model.dart' show ClnMgLocalModel;
-import 'package:flutter/widgets.dart' show debugPrint; // اضافه شد
+import 'package:flutter/widgets.dart' show debugPrint; 
 import 'package:injectable/injectable.dart';
 
-// @Injectable(as: ClmgListRepository) برای پیاده‌سازی ClmgListRepository
+
 // @lazySingleton
 @Injectable(as: ClmgListRepository)
 @lazySingleton
@@ -28,7 +28,7 @@ class ClmgListRepositoryImpl extends ClmgListRepository {
 
       return DataSuccess(newmglist);
     } catch (e) {
-      debugPrint("❌ Error in addtask: $e"); // اضافه شد
+      debugPrint("❌ Error in addtask: $e"); 
       return DataFailed("Error : $e");
     }
   }
@@ -45,7 +45,7 @@ class ClmgListRepositoryImpl extends ClmgListRepository {
 
       return DataSuccess(newmglist);
     } catch (e) {
-      debugPrint("❌ Error in deletetask: $e"); // اضافه شد
+      debugPrint("❌ Error in deletetask: $e"); 
       return DataFailed("Error : $e");
     }
   }
@@ -61,7 +61,7 @@ class ClmgListRepositoryImpl extends ClmgListRepository {
           localModel.mgs.map((e) => ClnMgLocalModel.toEntity(e)).toList();
       return DataSuccess(ClnMgListEntity(id: localModel.id, mgs: entityList));
     } catch (e) {
-      debugPrint("❌ Error in fetchAllTasks (id: $id): $e"); // اضافه شد
+      debugPrint("❌ Error in fetchAllTasks (id: $id): $e"); 
       return DataFailed("Error in featching Clean messages in db :$e");
     }
   }
@@ -78,7 +78,7 @@ class ClmgListRepositoryImpl extends ClmgListRepository {
 
       return DataSuccess(newmglist);
     } catch (e) {
-      debugPrint("❌ Error in saveTaskList: $e"); // اضافه شد
+      debugPrint("❌ Error in saveTaskList: $e"); 
       return DataFailed("Error : $e");
     }
   }
@@ -95,7 +95,7 @@ class ClmgListRepositoryImpl extends ClmgListRepository {
 
       return DataSuccess(newmglist);
     } catch (e) {
-      debugPrint("❌ Error in updatetaskList: $e"); // اضافه شد
+      debugPrint("❌ Error in updatetaskList: $e"); 
       return DataFailed("Error : $e");
     }
   }

@@ -3,7 +3,7 @@ import '../constants/constant.dart';
 
 Widget customFAB({
   required void Function()? onPressed,
-  double size = 80.0, // ابعاد کل دکمه (پیش‌فرض را کم کردیم)
+  double size = 80.0, 
   double iconSize = 35.0,
   Color? iconColor,
   bool hasShadow = true,
@@ -17,7 +17,7 @@ Widget customFAB({
       elevation: 0,
       backgroundColor: Colors.transparent,
       heroTag:
-          null, // بسیار مهم: برای دکمه‌های داخل لیست نباید تگ Hero تکراری باشد
+          null, 
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(

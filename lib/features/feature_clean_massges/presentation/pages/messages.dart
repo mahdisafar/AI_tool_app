@@ -28,19 +28,19 @@ class _MessagesState extends State<Messages> {
   void openChatDialog() {
     showDialog(
       context: context,
-      barrierDismissible: true, // اجازه خروج با کلیک به بیرون
+      barrierDismissible: true, 
       builder: (BuildContext dialogContext) {
-        // استفاده از اسم متفاوت برای context
+        
         return StatefulBuilder(
           builder: (context, setDialogState) {
             return AlertDialog(
               backgroundColor: Colors.white,
               insetPadding:
-                  const EdgeInsets.symmetric(horizontal: 20), // فاصله از لبه‌ها
+                  const EdgeInsets.symmetric(horizontal: 20), 
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               content: SizedBox(
-                // دادن یک اندازه اولیه ثابت برای جلوگیری از محاسبات سنگین
+                
                 width: 300,
                 child: chatboxWithStyle(
                   context,
@@ -51,7 +51,7 @@ class _MessagesState extends State<Messages> {
                   },
                   onTap: () {
                     if (controller.text.isNotEmpty) {
-                      // حتما از context اصلی (خارج از دیالوگ) برای دسترسی به Bloc استفاده کنید
+                      
                       this.context.read<FeatureCleanMassgesBloc>().add(
                           CreateCleanMessageEvent(
                               "$_currentStyle: ${controller.text}"));
@@ -96,7 +96,7 @@ class _MessagesState extends State<Messages> {
                     .add(ResetCleanMessageStatusEvent());
               }
 
-              // اصلاح این بخش:
+              
               else if (state.clnStatus == ClnStatus.failure) {
                 CustomSnackBar.show(
                     context, state.errorMessage ?? "خطایی رخ داد",

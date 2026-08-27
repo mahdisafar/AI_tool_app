@@ -60,12 +60,12 @@ class ChatStreamApiProvider {
       },
       options: Options(
         responseType: ResponseType.stream,
-        // 👈 این خط رو اضافه کردیم تا دیو کرش نکنه
+        
         validateStatus: (status) => true,
       ),
     );
 
-    // 👈 بررسی می‌کنیم اگر سرور ارور داد، متنش رو بخونیم
+    
     if (response.statusCode != 200) {
       final errorStream = response.data!.stream;
       final errorBytes = await errorStream.toList();

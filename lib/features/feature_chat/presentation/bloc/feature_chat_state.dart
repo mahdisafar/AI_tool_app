@@ -18,14 +18,14 @@ class ChatState extends Equatable {
   final ChatMessageEntity? streamingMessage;
   final ChatStatus status;
   final String? errorMessage;
-  final String? chatId; // 👈 آیدی چت فعال اینجا اضافه شد
+  final String? chatId; 
 
   const ChatState({
     required this.messages,
     this.streamingMessage,
     required this.status,
     this.errorMessage,
-    this.chatId, // 👈 اضافه شدن به سازنده
+    this.chatId, 
   });
 
   ChatState copyWith({
@@ -34,9 +34,9 @@ class ChatState extends Equatable {
     bool clearStreamingMessage = false,
     ChatStatus? status,
     String? errorMessage,
-    String? chatId, // 👈 اضافه شدن به copyWith
+    String? chatId, 
     bool clearChatId =
-        false, // 👈 ترفند پاک کردن آیدی هنگام شروع چت کاملاً جدید
+        false, 
   }) {
     return ChatState(
       messages: messages ?? this.messages,
@@ -47,7 +47,7 @@ class ChatState extends Equatable {
       errorMessage: errorMessage ?? this.errorMessage,
       chatId: clearChatId
           ? null
-          : (chatId ?? this.chatId), // 👈 مدیریت نال شدن یا تغییر آیدی
+          : (chatId ?? this.chatId), 
     );
   }
 
@@ -58,7 +58,7 @@ class ChatState extends Equatable {
         status,
         errorMessage,
         chatId
-      ]; // 👈 اضافه شدن به props
+      ]; 
 }
 
 //state for every Archive chat

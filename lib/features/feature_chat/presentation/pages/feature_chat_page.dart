@@ -56,23 +56,23 @@ class _FeatureChatPageState extends State<FeatureChatPage> {
         child: SafeArea(
           child: Stack(
             children: [
-              // لیست چت با ماسک فید (ShaderMask) که پیام‌ها رو موقع رد شدن از زیر Input و AppBar محو می‌کنه
+              
               ShaderMask(
                 shaderCallback: (Rect bounds) {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Colors.transparent, // محو شدن بالای صفحه (زیر AppBar)
-                      Colors.black, // شفافیت کامل پیام‌ها
-                      Colors.black, // شفافیت کامل پیام‌ها
-                      Colors.transparent, // محو شدن پایین صفحه (زیر InputBar)
+                      Colors.transparent, 
+                      Colors.black, 
+                      Colors.black, 
+                      Colors.transparent, 
                     ],
                     stops: [
-                      0.0, // شروع فید از بالاترین نقطه
-                      0.07, // نمایان شدن کامل بعد از AppBar
-                      0.85, // شروع محو شدن قبل از رسیدن به InputBar
-                      0.98, // محو شدن کامل زیر InputBar
+                      0.0, 
+                      0.07, 
+                      0.85, 
+                      0.98, 
                     ],
                   ).createShader(bounds);
                 },
@@ -82,7 +82,7 @@ class _FeatureChatPageState extends State<FeatureChatPage> {
                 ),
               ),
 
-              // AppBar بالای صفحه
+              
               Positioned(
                 top: 0,
                 left: 0,
@@ -143,7 +143,7 @@ class _FeatureChatPageState extends State<FeatureChatPage> {
                 ),
               ),
 
-              // InputBar شناور در پایین
+              
               Positioned(
                 bottom: 20,
                 left: 0,

@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage>
         ),
         child: Stack(
           children: [
-            // دایره‌های بلوری متحرک پس‌زمینه
+            
             ...List.generate(4, (i) {
               return AnimatedBuilder(
                 animation: _bgCtrl,
@@ -73,12 +73,12 @@ class _HomePageState extends State<HomePage>
               );
             }),
 
-            // محتوا
+            
             SafeArea(
               child: Column(
                 children: [
                   SizedBox(height: context.height * 0.05),
-                  // عنوان
+                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Row(

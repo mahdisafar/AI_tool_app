@@ -12,7 +12,7 @@ class ClnMgListAdapterModel extends TypeAdapter<ClnMgListLocalModel> {
     final mgList = reader.readList();
     return ClnMgListLocalModel(
       id: id,
-      mgs: mgList.cast<ClnMgLocalModel>(), // تبدیل نوع لیست
+      mgs: mgList.cast<ClnMgLocalModel>(), 
     );
   }
 

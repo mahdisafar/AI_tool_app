@@ -4,7 +4,7 @@ import '../errors/exeptions.dart';
 
 class ArvanErrorHandler {
   static Never handle(DioException e) {
-    // ۱. بررسی خطاهای شبکه (قبل از رسیدن به سرور)
+    
     if (_isNetworkError(e)) {
       throw AppException(
         message:
@@ -13,15 +13,15 @@ class ArvanErrorHandler {
       );
     }
 
-    // ۲. بررسی پاسخ سرور آروان
+    
     if (e.response != null) {
       final status = e.response?.statusCode;
       final data = e.response?.data;
 
-      // تلاش برای استخراج پیام خطای اختصاصی از بدنه پاسخ آروان
+      
       String? serverMessage;
       if (data is Map<String, dynamic> && data.containsKey('error')) {
-        // آروان معمولاً خطا را در فیلد error.message می‌فرستد
+        
         serverMessage = data['error']['message']?.toString();
       }
 
@@ -55,7 +55,7 @@ class ArvanErrorHandler {
       }
     }
 
-    // ۳. خطاهای غیرمنتظره
+    
     throw AppException(
       message: "یک خطای غیرمنتظره رخ داد. لطفا دوباره تلاش کنید.",
       isNetworkError: false,
@@ -71,12 +71,12 @@ class ArvanErrorHandler {
   }
 
   static String getErrorMessage(DioException e) {
-    // نام متد را تغییر دادیم
+    
     if (_isNetworkError(e)) {
       return "مشکل در اتصال به اینترنت...";
     }
     if (e.response != null) {
-      // ... همان switch-case ها ...
+      
       return "پیام استخراج شده یا پیام پیش‌فرض";
     }
     return "خطای ناشناخته";

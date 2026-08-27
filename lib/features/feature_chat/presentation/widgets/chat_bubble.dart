@@ -14,7 +14,7 @@ class ChatBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    // ۱. رنگ‌ها و ترازهای ثابت بر اساس فرستنده
+    
     final bubbleColor = isUser
         ? theme.colorScheme.primary
         : theme.colorScheme.secondaryContainer;
@@ -38,7 +38,7 @@ class ChatBubble extends StatelessWidget {
       child: Column(
         crossAxisAlignment: alignment,
         children: [
-          // ۲. حباب چت خالص و ثابت
+          
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(

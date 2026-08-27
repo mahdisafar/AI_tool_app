@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/entities/chat_archives_entity.dart';
 
-/// منوی کشویی تاریخچه چت‌ها - تبدیل به StatefulWidget برای مدیریت لود دیتا
+
 class ChatDrawer extends StatefulWidget {
   const ChatDrawer({super.key});
 
@@ -20,7 +20,7 @@ class _ChatDrawerState extends State<ChatDrawer> {
   @override
   void initState() {
     super.initState();
-    // 🔥 به محض اینکه دراور باز بشه، این ایونت اجرا میشه و لیست چت‌ها رو از هایو می‌کشه بیرون
+    
     context.read<FeatureAllChatArchicesbloc>().add(GetAllchatArchives());
   }
 
@@ -72,7 +72,7 @@ class _ChatDrawerState extends State<ChatDrawer> {
                   builder: (context, state) {
                     debugPrint("وضعیت فعلی دراور: ${state.runtimeType}");
 
-                    // 🌟 اگر در حالت اولویت یا لودینگ بود، انیمیشن لودینگ نشون بده
+                    
                     if (state is AllChatArchicesInitial ||
                         state is AllChatArchicesLoading) {
                       return const Center(child: CircularProgressIndicator());
@@ -99,7 +99,7 @@ class _ChatDrawerState extends State<ChatDrawer> {
                     return ListView.builder(
                       itemCount: archives.length,
                       itemBuilder: (context, index) {
-                        // چک کردن برای جلوگیری از کراش در صورتی که لیست چت داخل آرشیو خالی باشه
+                        
                         final chatTitle = archives[index].chat.isNotEmpty
                             ? archives[index].chat[0].text
                             : "چت خالی";
@@ -136,7 +136,7 @@ class _ChatDrawerState extends State<ChatDrawer> {
                                 .read<ActiveChatCubit>()
                                 .selectChat(archives[index].id);
                             Navigator.pop(
-                                context); // بستن دراور بعد از انتخاب چت
+                                context); 
                           },
                         );
                       },

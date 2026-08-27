@@ -107,7 +107,7 @@ class _VoiceChatPageState extends State<VoiceChatPage>
                   children: [
                     const Spacer(flex: 2),
 
-                    // === VoiceVisualizer مستقیم ===
+                    
                     SizedBox(
                       width: 300,
                       height: 300,
@@ -122,7 +122,7 @@ class _VoiceChatPageState extends State<VoiceChatPage>
 
                     const SizedBox(height: 40),
 
-                    // === متن وضعیت ===
+                    
                     AnimatedSwitcher(
                       duration: const Duration(milliseconds: 400),
                       child: Text(
@@ -148,7 +148,7 @@ class _VoiceChatPageState extends State<VoiceChatPage>
 
                     const Spacer(flex: 3),
 
-                    // === دکمه میکروفون نئون ===
+                    
                     GestureDetector(
                       onTap: () {
                         if (isMicEnabled) {

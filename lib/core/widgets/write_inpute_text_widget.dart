@@ -6,9 +6,9 @@ Widget chatbox(BuildContext context,
   return Column(
     mainAxisSize: MainAxisSize.min,
     children: [
-      // اضافه کردن ویجت Material در اینجا مشکل را حل می‌کند
+      
       Material(
-        color: Colors.transparent, // شفاف باشد تا استایل کانتینر خودت خراب نشود
+        color: Colors.transparent, 
         child: Container(
           width: MediaQuery.of(context).size.width * 0.85,
           constraints: const BoxConstraints(
@@ -43,7 +43,7 @@ Widget chatbox(BuildContext context,
 
       const SizedBox(height: 20),
 
-      // دکمه تایید هم بهتر است در Material باشد (یا از ElevatedButton استفاده شود که خودش متریال دارد)
+      
       SizedBox(
         width: MediaQuery.of(context).size.width * 0.4,
         height: 50,

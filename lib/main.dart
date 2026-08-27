@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:ai_app/core/di/config.dart';
-import 'package:ai_app/features/feature_chat/data/data_source/chat_archive_hive.dart'; // 💡 اضافه شد
+import 'package:ai_app/features/feature_chat/data/data_source/chat_archive_hive.dart'; 
 import 'package:ai_app/features/feature_chat/data/models/local/chat_archive_local_model.dart';
 import 'package:ai_app/features/feature_chat/presentation/bloc/active_chat_cubit.dart';
 import 'package:ai_app/features/feature_chat/presentation/bloc/feature_chat_bloc.dart';
@@ -29,7 +29,7 @@ void main() async {
   Directory directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
 
-  // ۱. ثبت تمام آداپتورها
+  
   Hive.registerAdapter(MaketaskLocalModelAdapter());
   Hive.registerAdapter(TaskListLocalModelAdapter());
   Hive.registerAdapter(ClnMgListAdapterModel());
@@ -37,20 +37,20 @@ void main() async {
   Hive.registerAdapter(ChatMessageLocalModelAdapter());
   Hive.registerAdapter(ChatArchiveLocalModelAdapter());
 
-  // ۲. لود کردن دات‌انورنمنت
+  
   await dotenv.load(fileName: "assets/config.env");
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // ۳. ثبت وابستگی‌ها در GetIt
+  
   configureDependencies();
 
-  // ۴. باز کردن باکس‌های هایو به صورت اصولی از طریق دیتاسورس‌های ریجستر شده
+  
   await getIt<ChatArchiveHive>()
-      .openBox(); // 💡 باکس چت با دیتاسورس خودش باز می‌شود
+      .openBox(); 
   await getIt<ClnHive>().openBox();
 
-  // باکس تسک‌ها (چون دیتاسورس اختصاصی برای باز کردنش نداری، دستی بازش می‌کنیم اما با مدل درست)
+  
   await Hive.openBox<TaskListLocalModel>('task_lists_box');
 
   runApp(const MyApp());

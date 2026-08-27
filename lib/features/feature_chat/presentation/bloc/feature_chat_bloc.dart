@@ -31,7 +31,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       required this.getChatUsecase})
       : super(const ChatState(
             messages: [], status: ChatStatus.initial, errorMessage: null)) {
-    // ==================== رویداد ارسال پیام در چت موجود ====================
+    
     void prepareNewStream() {
       if (_stopSignal != null && !_stopSignal!.isClosed) {
         _stopSignal!.add(null);
@@ -99,7 +99,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       }
     });
 
-    // ==================== رویداد ساخت چت جدید ====================
+    
     on<Createchat>((event, emit) async {
       prepareNewStream();
       emit(state.copyWith(
@@ -107,7 +107,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       String id = DateTime.now().microsecondsSinceEpoch.toString();
       final userMessage = ChatMessageEntity(text: event.message, isUser: true);
 
-      // 🔥 نکته کلیدی: آیدی چت جدید رو همینجا سریع می‌ذاریم داخل استیت چت
+      
       emit(state.copyWith(
         messages: [userMessage],
         status: ChatStatus.streamloading,
@@ -117,7 +117,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       await startChatUsecase(
           ChatArchivesEntity(id: id, chat: <ChatMessageEntity>[userMessage]));
 
-      // آپدیت همزمان کیوبیت برای همخوانی با بقیه بخش‌های اپلیکیشن (مثل دراور)
+      
       activeChatCubit.selectChat(id);
 
       final placeholder = ChatMessageEntity(text: '', isUser: false);
@@ -163,7 +163,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       }
     });
 
-    // ==================== رویداد لود چت از دراور ====================
+    
     on<GetMainchatsEvent>((event, emit) async {
       emit(state.copyWith(
           messages: [], status: ChatStatus.archiveLoading, chatId: event.id));
@@ -174,7 +174,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
           emit(state.copyWith(
             messages: dataState.data.chat.reversed.toList(),
             status: ChatStatus.succsesArchive,
-            chatId: event.id, // لود شدن آیدی چت انتخاب شده
+            chatId: event.id, 
           ));
         } else {
           emit(state.copyWith(
@@ -188,7 +188,7 @@ class FeatureChatBloc extends Bloc<FeatureChatEvent, ChatState> {
       }
     });
 
-    // ==================== دکمه پلاس چت جدید ====================
+    
     on<CreateNewArchive>((event, emit) async {
       emit(state.copyWith(
           messages: [], status: ChatStatus.initial, clearChatId: true));

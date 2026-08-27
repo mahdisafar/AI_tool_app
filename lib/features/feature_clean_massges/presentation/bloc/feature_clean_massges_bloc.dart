@@ -41,14 +41,14 @@ class FeatureCleanMassgesBloc
       },
     );
 
-    // ۲. ایجاد پیام جدید
+    
     on<CreateCleanMessageEvent>(
       (event, emit) async {
         emit(state.copyWith(clnStatus: ClnStatus.loading));
         DataState dataState = await makeclnmgUseCase(event.rawMessage);
 
         if (dataState is DataSuccess) {
-          // گرفتن لیست فعلی و اضافه کردن پیام جدید به آن
+          
           final currentMessages = state.messages;
           final updatedMessages = List<ClnMgEntity>.from(currentMessages)
             ..add(dataState.data);
@@ -62,30 +62,30 @@ class FeatureCleanMassgesBloc
             emit(state.copyWith(
               clnStatus: ClnStatus.success,
               clnListStatus: ClnListStatus.success,
-              messages: updatedMessages, // آپدیت لیست از طریق copyWith
+              messages: updatedMessages, 
             ));
           } else {
             emit(state.copyWith(
-              clnStatus: ClnStatus.success, // چون پیام تولید شده موفقه
+              clnStatus: ClnStatus.success, 
               clnListStatus: ClnListStatus.failure,
-              errorMessage: dataListState.errors, // آپدیت خطا از طریق copyWith
+              errorMessage: dataListState.errors, 
             ));
           }
         } else {
           emit(state.copyWith(
             clnStatus: ClnStatus.failure,
-            errorMessage: dataState.errors, // آپدیت خطا از طریق copyWith
+            errorMessage: dataState.errors, 
           ));
         }
       },
     );
 
-    // ۳. حذف پیام
+    
     on<DeleteCleanMessageEvent>(
       (event, emit) async {
         emit(state.copyWith(clnListStatus: ClnListStatus.loading));
 
-        // فیلتر کردن لیست پیام‌ها (حذف آیتم مورد نظر)
+        
         final updatedList = state.messages
             .where((msg) => msg.id?.trim() != event.id.trim())
             .toList();
@@ -96,7 +96,7 @@ class FeatureCleanMassgesBloc
         if (dataState is DataSuccess) {
           emit(state.copyWith(
             clnListStatus: ClnListStatus.success,
-            messages: updatedList, // جایگزینی لیست جدید فیلتر شده
+            messages: updatedList, 
           ));
         } else {
           emit(state.copyWith(
@@ -107,7 +107,7 @@ class FeatureCleanMassgesBloc
       },
     );
 
-    // ۴. دریافت لیست پیام‌ها
+    
     on<FetchCleanMessagesEvent>((event, emit) async {
       emit(state.copyWith(clnListStatus: ClnListStatus.loading));
       DataState dataState = await getClnMgListUseCase(event.id);
@@ -116,7 +116,7 @@ class FeatureCleanMassgesBloc
         emit(state.copyWith(
           clnListStatus: ClnListStatus.success,
           messages: dataState.data.mgs ??
-              [], // توجه: لیست پیام‌ها از داخل فیلد mgs از کلاس ClnMgListEntity استخراج می‌شود
+              [], 
         ));
       } else {
         emit(state.copyWith(

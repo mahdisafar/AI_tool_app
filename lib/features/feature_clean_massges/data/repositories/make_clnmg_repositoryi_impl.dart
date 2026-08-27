@@ -10,7 +10,7 @@ import '../../../../core/constants/constant.dart' show AiNames;
 import '../../domain/repositories/make_clnmg_repository.dart';
 import '../helper/extractmessage.dart';
 
-// @Injectable(as: MakeClnmgRepository) برای پیاده‌سازی MakeClnmgRepository
+
 // @lazySingleton
 @Injectable(as: MakeClnmgRepository)
 @lazySingleton
@@ -27,11 +27,11 @@ class MakeClnmgRepositoryImpl extends MakeClnmgRepository {
           ClnmgModel.fromOpenAI(response, AiNames.gapgptqwen3);
 
       debugPrint(
-          "✅ AI Raw Response: ${clnMgEntity.contentmessage}"); // برای دیدن پاسخ خام AI
+          "✅ AI Raw Response: ${clnMgEntity.contentmessage}"); 
 
       final String rawContent = clnMgEntity.contentmessage;
       if (rawContent.contains("INVALID_INPUT")) {
-        debugPrint("⚠️ AI returned INVALID_INPUT"); // اضافه شد
+        debugPrint("⚠️ AI returned INVALID_INPUT"); 
         return DataFailed("هوش مصنوعی متوجه درخواست شما نشد.");
       }
 
@@ -39,7 +39,7 @@ class MakeClnmgRepositoryImpl extends MakeClnmgRepository {
 
       if (airesponse == null) {
         debugPrint(
-            "⚠️ extractMessageDetails returned NULL for: $rawContent"); // اضافه شد
+            "⚠️ extractMessageDetails returned NULL for: $rawContent"); 
       }
 
       clnMgEntity = ClnMgEntity(
@@ -51,10 +51,10 @@ class MakeClnmgRepositoryImpl extends MakeClnmgRepository {
       return DataSuccess(clnMgEntity);
     } on RequestFailedException catch (e) {
       debugPrint(
-          "❌ OpenAI Request Failed: ${e.message} | Code: ${e.statusCode}"); // اضافه شد
+          "❌ OpenAI Request Failed: ${e.message} | Code: ${e.statusCode}"); 
       return DataFailed("خطای سرور: ${e.message}, کد: ${e.statusCode}");
     } catch (e) {
-      debugPrint("❌ Unexpected Error in makeclnmg: $e"); // اضافه شد
+      debugPrint("❌ Unexpected Error in makeclnmg: $e"); 
       return DataFailed("Error in repo  clean message:$e");
     }
   }

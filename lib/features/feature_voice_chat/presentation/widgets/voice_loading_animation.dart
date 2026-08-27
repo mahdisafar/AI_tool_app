@@ -35,7 +35,7 @@ class _VoiceLoadingAnimationState extends State<VoiceLoadingAnimation>
         return Stack(
           alignment: Alignment.center,
           children: [
-            // دایره چرخان خارجی
+            
             Transform.rotate(
               angle: _ctrl.value * 2 * pi,
               child: Container(
@@ -60,7 +60,7 @@ class _VoiceLoadingAnimationState extends State<VoiceLoadingAnimation>
               ),
             ),
 
-            // پالس‌های متحدالمرکز
+            
             ...List.generate(3, (i) {
               final delay = i * 0.25;
               var val = (_ctrl.value - delay) % 1.0;
@@ -79,7 +79,7 @@ class _VoiceLoadingAnimationState extends State<VoiceLoadingAnimation>
               );
             }),
 
-            // آیکون مرکزی نورانی
+            
             Container(
               width: 72,
               height: 72,

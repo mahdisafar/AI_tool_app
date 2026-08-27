@@ -3,7 +3,7 @@ import 'package:hive/hive.dart';
 import '../local/cln_mg_local_model.dart';
 
 class ClnMgAdapter extends TypeAdapter<ClnMgLocalModel> {
-  final int typeId = 4; // دقیقاً همان typeId که در مدل مشخص کردید
+  final int typeId = 4; 
 
   @override
   ClnMgLocalModel read(BinaryReader reader) {
@@ -23,7 +23,7 @@ class ClnMgAdapter extends TypeAdapter<ClnMgLocalModel> {
   @override
   void write(BinaryWriter writer, ClnMgLocalModel obj) {
     writer
-      ..writeByte(5) // تعداد فیلدها
+      ..writeByte(5) 
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)

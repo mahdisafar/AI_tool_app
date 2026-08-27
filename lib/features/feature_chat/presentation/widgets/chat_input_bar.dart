@@ -32,19 +32,19 @@ class _ChatInputBarState extends State<ChatInputBar> {
     }
   }
 
-// داخل ChatInputBar
+
   void _onFocus() {
     _marginNotifier.value =
         _focusNode.hasFocus ? context.width * 0.8 : context.width * 0.67;
   }
 
   void _scrollToBottom() {
-    // یک تاخیر کوچک برای اطمینان از اعمال تغییرات BLoC در UI
+    
     Future.delayed(const Duration(milliseconds: 100), () {
       if (!mounted) return;
       if (widget.scrollController.hasClients) {
         final target = widget.scrollController.position.minScrollExtent;
-        // نکته: اگر لیست reverse: false هست، به جای minScrollExtent از maxScrollExtent استفاده کن.
+        
 
         widget.scrollController.animateTo(
           target,
@@ -65,10 +65,10 @@ class _ChatInputBarState extends State<ChatInputBar> {
     super.dispose();
   }
 
-  // 🛠️ آیدی فعلی استیت مستقیماً به تابع فرستادن پاس داده می‌شود
-  // داخل متد _sendMessage فایل chat_input_bar.dart
+  
+  
   void _sendMessage(String? currentChatId) {
-    // 👈 آیدی رو به عنوان ورودی بگیر
+    
     final text = _controller.text.trim();
     if (text.isEmpty) return;
     if (!mounted) return;
@@ -76,7 +76,7 @@ class _ChatInputBarState extends State<ChatInputBar> {
     FocusScope.of(context).unfocus();
 
     if (currentChatId == null) {
-      // 👈 اینجا چک می‌کنه
+      
       context.read<FeatureChatBloc>().add(Createchat(message: text, image: ""));
     } else {
       context.read<FeatureChatBloc>().add(
@@ -101,7 +101,7 @@ class _ChatInputBarState extends State<ChatInputBar> {
               width: _marginNotifier.value,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(22),
-                // 👈 گرادیانت ملایم هم‌رنگ تم برنامه
+                
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -110,12 +110,12 @@ class _ChatInputBarState extends State<ChatInputBar> {
                     Constants.mediumBlue.withOpacity(0.7),
                   ],
                 ),
-                // 👈 سایه خیلی نرم و محو برای از بین بردن خطوط تیز کانتینر
+                
                 boxShadow: [
                   BoxShadow(
                     color: const Color(0xFF0A1128).withOpacity(0.6),
-                    blurRadius: 25, // میزان پخش شدن سایه
-                    spreadRadius: 2, // عمق سایه
+                    blurRadius: 25, 
+                    spreadRadius: 2, 
                     offset: const Offset(0, 4),
                   ),
                 ],
@@ -150,7 +150,7 @@ class _ChatInputBarState extends State<ChatInputBar> {
                               vertical: 10.0,
                             ),
                           ),
-                          // پاس دادن آیدی زنده به متد ان‌سابمیت کیبورد
+                          
                           onSubmitted: (_) {
                             if (!isGenerating) {
                               _sendMessage(state.chatId);
@@ -171,7 +171,7 @@ class _ChatInputBarState extends State<ChatInputBar> {
                           child: IconButton(
                             padding: EdgeInsets.zero,
                             constraints:
-                                const BoxConstraints(), // 👈 حذف محدودیت سایز پیش‌فرض IconButton
+                                const BoxConstraints(), 
                             icon: Icon(
                               Icons.stop_rounded,
                               color: Theme.of(context).colorScheme.error,
@@ -188,8 +188,8 @@ class _ChatInputBarState extends State<ChatInputBar> {
                             boxShadow: [
                               BoxShadow(
                                 color: Color(0xFF0A1128).withOpacity(0.6),
-                                blurRadius: 25, // میزان پخش شدن سایه
-                                spreadRadius: 2, // عمق سایه
+                                blurRadius: 25, 
+                                spreadRadius: 2, 
                                 offset: Offset(0, 4),
                               ),
                             ],

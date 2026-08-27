@@ -7,7 +7,7 @@ abstract class FeatureCleanMassgesEvent extends Equatable {
   List<Object> get props => [];
 }
 
-/// رویداد تولید پیام جدید توسط هوش مصنوعی
+
 class CreateCleanMessageEvent extends FeatureCleanMassgesEvent {
   final String rawMessage;
   const CreateCleanMessageEvent(this.rawMessage);
@@ -16,7 +16,7 @@ class CreateCleanMessageEvent extends FeatureCleanMassgesEvent {
   List<Object> get props => [rawMessage];
 }
 
-/// رویداد دریافت لیست پیام‌ها از دیتابیس محلی
+
 class FetchCleanMessagesEvent extends FeatureCleanMassgesEvent {
   final String id;
   const FetchCleanMessagesEvent(this.id);
@@ -25,7 +25,7 @@ class FetchCleanMessagesEvent extends FeatureCleanMassgesEvent {
   List<Object> get props => [id];
 }
 
-/// رویداد ذخیره یا آپدیت کل لیست
+
 class SaveCleanMessagesListEvent extends FeatureCleanMassgesEvent {
   final ClnMgListEntity cleanMgList;
   const SaveCleanMessagesListEvent(this.cleanMgList);
@@ -34,7 +34,7 @@ class SaveCleanMessagesListEvent extends FeatureCleanMassgesEvent {
   List<Object> get props => [cleanMgList];
 }
 
-/// رویداد حذف یک لیست یا بخشی از آن
+
 class DeleteCleanMessageEvent extends FeatureCleanMassgesEvent {
   final String id;
   const DeleteCleanMessageEvent(this.id);
@@ -43,5 +43,5 @@ class DeleteCleanMessageEvent extends FeatureCleanMassgesEvent {
   List<Object> get props => [id];
 }
 
-/// اگر نیاز داشتی که وضعیت UI را به حالت اولیه برگردانی
+
 class ResetCleanMessageStatusEvent extends FeatureCleanMassgesEvent {}

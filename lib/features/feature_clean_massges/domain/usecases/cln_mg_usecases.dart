@@ -7,7 +7,7 @@ import '../entities/cln_mg_list_entity.dart';
 import '../repositories/clmg_list_repository.dart';
 import '../repositories/make_clnmg_repository.dart';
 
-// @lazySingleton برای Use Case ساخت پیام تمیز
+
 @lazySingleton
 class Makeclnmg extends UseCase<DataState<ClnMgEntity>, String> {
   final MakeClnmgRepository repo;

@@ -110,7 +110,7 @@ class _ProfessionalOnboardingState extends State<ProfessionalOnboarding> {
               },
             ),
 
-            // بخش کنترلر پایین
+            
             Positioned(
               bottom: 60,
               left: 40,

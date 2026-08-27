@@ -7,21 +7,21 @@ abstract class FeatureVoiceChatEvent extends Equatable {
   List<Object> get props => [];
 }
 
-// برای استارت اولیه و چک پرمیشن
+
 class InitialVoiceChatEvent extends FeatureVoiceChatEvent {}
 
-// برای باز کردن میکروفون و حرف زدن با جمینای
+
 class StartTalkingEvent extends FeatureVoiceChatEvent {}
 
-// برای قطع کردن میکروفون (Mute / پایان صحبت)
+
 class StopTalkingEvent extends FeatureVoiceChatEvent {}
 
-// خروج کامل از صفحه چت
+
 class LeaveChatEvent extends FeatureVoiceChatEvent {}
 
 class WatchSessionStateEvent extends FeatureVoiceChatEvent {}
 
-// ایونت‌های داخلی برای مدیریت استریم
+
 class StartWatchingSessionEvent extends FeatureVoiceChatEvent {}
 
 class _InternalSessionDataUpdated extends FeatureVoiceChatEvent {

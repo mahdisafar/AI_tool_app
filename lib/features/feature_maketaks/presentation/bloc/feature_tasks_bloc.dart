@@ -21,7 +21,7 @@ import '../../domain/usecases/task_lits_usecases.dart'
 part 'feature_tasks_event.dart';
 part 'feature_tasks_state.dart';
 
-// @factory برای Bloc (هر بار یک نمونه جدید بساز)
+
 @injectable
 class FeatureTasksBloc extends Bloc<FeatureTasksEvent, FeatureTasksState> {
   final MaketaskUsecase maketaskUsecase;
@@ -106,7 +106,7 @@ class FeatureTasksBloc extends Bloc<FeatureTasksEvent, FeatureTasksState> {
           final updatedList = TaskListEntity(
             id: event.taskListEntity.id,
             tasks:
-                event.taskListEntity.tasks, // لیستی که به یوزکیس فرستاده بودیم
+                event.taskListEntity.tasks, 
           );
           emit(state.copyWith(tlStatus: TlCompleted(updatedList)));
         } else {

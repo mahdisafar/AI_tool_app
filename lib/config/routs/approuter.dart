@@ -14,7 +14,7 @@ class AppRouter {
         path: AppRoutes.onboarding,
         builder: (context, state) => const ProfessionalOnboarding(),
       ),
-      // مسیر اصلی Home
+      
       GoRoute(
         path: AppRoutes.home,
         builder: (context, state) => const HomePage(),

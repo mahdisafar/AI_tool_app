@@ -15,7 +15,7 @@ class ClnmgModel extends ClnMgEntity {
   final String? model;
   final List<Choice>? choices;
   final Usage? usage;
-  final String messagecontent; // اضافه شده به صورت محلی چون Entity کامنت شده
+  final String messagecontent; 
 
   ClnmgModel({
     this.id,
@@ -30,13 +30,13 @@ class ClnmgModel extends ClnMgEntity {
           contentmessage: _extractContent(choices),
         );
 
-  // متد کمکی برای جلوگیری از خطای RangeError
+  
   static String _extractContent(List<Choice>? choices) {
     if (choices == null || choices.isEmpty) return "";
     final firstChoice = choices.first;
     if (firstChoice.message == null) return "";
 
-    // اولویت با content است، اگر نبود شاید در reasoning باشد
+    
     return firstChoice.message?.content ?? firstChoice.message?.reasoning ?? "";
   }
 
@@ -150,14 +150,14 @@ class Usage {
 class Message {
   final String? role;
   final String? content;
-  final String? reasoning; // برای مدل‌هایی که فکر کردن (Reasoning) دارند
+  final String? reasoning; 
 
   Message({this.role, this.content, this.reasoning});
 
   factory Message.fromMap(Map<String, dynamic> data) => Message(
         role: data['role'] as String?,
         content: data['content'] as String?,
-        // فیلد reasoning در برخی APIها با نام reasoning_content شناخته می‌شود
+        
         reasoning: data['reasoning_content'] as String?,
       );
 

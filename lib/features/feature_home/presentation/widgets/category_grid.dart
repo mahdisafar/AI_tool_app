@@ -104,7 +104,7 @@ class _CategoryGridState extends State<CategoryGrid>
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // بالا
+                    
                     Align(
                       alignment: Alignment.topCenter,
                       child: Transform.rotate(
@@ -116,7 +116,7 @@ class _CategoryGridState extends State<CategoryGrid>
                         ),
                       ),
                     ),
-                    // راست
+                    
                     Align(
                       alignment: Alignment.centerRight,
                       child: Transform.rotate(
@@ -128,7 +128,7 @@ class _CategoryGridState extends State<CategoryGrid>
                         ),
                       ),
                     ),
-                    // پایین
+                    
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Transform.rotate(
@@ -140,7 +140,7 @@ class _CategoryGridState extends State<CategoryGrid>
                         ),
                       ),
                     ),
-                    // چپ
+                    
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Transform.rotate(
@@ -152,7 +152,7 @@ class _CategoryGridState extends State<CategoryGrid>
                         ),
                       ),
                     ),
-                    // مرکز – آیکون زینتی
+                    
                     Container(
                       width: 52,
                       height: 52,

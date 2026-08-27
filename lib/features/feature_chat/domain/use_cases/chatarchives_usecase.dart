@@ -17,7 +17,7 @@ class CreateNewChatUsecase
   }
 }
 
-// ۲. یوزکیس گرفتن یک چت خاص با آیدی
+
 @injectable
 class GetChatUsecase extends UseCase<DataState<ChatArchivesEntity>, String> {
   final ChatArchivesRepository repo;
@@ -29,7 +29,7 @@ class GetChatUsecase extends UseCase<DataState<ChatArchivesEntity>, String> {
   }
 }
 
-// ۳. یوزکیس حذف یک چت
+
 @injectable
 class DeleteChatUsecase
     extends UseCase<DataState<List<ChatArchivesEntity>>, String> {
@@ -53,7 +53,7 @@ class GetAllchatsUseCase
   }
 }
 
-// ۴. یوزکیس اضافه کردن پیام به آرشیو چت
+
 @injectable
 class AddMessageToArchiveUsecase
     extends UseCase<DataState<bool>, AddMessageParams> {

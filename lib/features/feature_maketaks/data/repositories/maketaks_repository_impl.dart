@@ -10,8 +10,8 @@ import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/maketaks_repository.dart';
 
-// @Injectable(as: MaketaksRepository) می‌گه که این کلاس پیاده‌سازی MaketaksRepository است
-// @lazySingleton برای ثبت به صورت Singleton تنبل
+
+
 @Injectable(as: MaketaksRepository)
 @lazySingleton
 class MaketaksRepositoryImpl extends MaketaksRepository {

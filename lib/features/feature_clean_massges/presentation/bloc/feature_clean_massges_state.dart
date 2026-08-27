@@ -4,8 +4,8 @@ class FeatureCleanMassgesState extends Equatable {
   final ClnStatus clnStatus;
   final ClnListStatus clnListStatus;
   final List<ClnMgEntity>
-      messages; // کلمه final اضافه شد تا متغیر غیرقابل تغییر باشد
-  final String? errorMessage; // کلمه final اضافه شد
+      messages; 
+  final String? errorMessage; 
 
   const FeatureCleanMassgesState({
     required this.messages,
@@ -14,7 +14,7 @@ class FeatureCleanMassgesState extends Equatable {
     this.errorMessage,
   });
 
-  // اصلاح کامل متد copyWith برای پذیرش همه فیلدها
+  
   FeatureCleanMassgesState copyWith({
     ClnStatus? clnStatus,
     ClnListStatus? clnListStatus,
@@ -25,11 +25,11 @@ class FeatureCleanMassgesState extends Equatable {
       clnListStatus: clnListStatus ?? this.clnListStatus,
       clnStatus: clnStatus ?? this.clnStatus,
       messages: messages ?? this.messages,
-      errorMessage: errorMessage ?? this.errorMessage, // به درستی اضافه شد
+      errorMessage: errorMessage ?? this.errorMessage, 
     );
   }
 
-  // اضافه کردن تمام فیلدها به props جهت مقایسه درست توسط Equatable
+  
   @override
   List<Object?> get props => [clnStatus, clnListStatus, messages, errorMessage];
 }

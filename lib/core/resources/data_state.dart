@@ -10,8 +10,8 @@ class DataSuccess<T> extends DataState<T> {
 }
 
 class DataFailed<T> extends DataState<T> {
-  // استفاده از dynamic یعنی هر چیزی (String، Enum، کلاس ارور) می‌تونه این‌جا قرار بگیره
-  // بدون اینکه نیاز باشه تایپ جدیدی به کلاس اضافه کنی و ارور بگیری
+  
+  
   final dynamic errorType;
 
   DataFailed(String? error, {this.errorType}) : super(null, error);

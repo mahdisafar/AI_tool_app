@@ -12,7 +12,7 @@ class TaskListModel extends TaskListEntity {
                 .map((t) => MaketaskEntity(
                       id: t.id,
                       model: t.model ??
-                          "", // اگر نال بود رشته خالی بفرست تا خطا ندهد
+                          "", 
                       messagecontent: (t.choices?[0] != null &&
                               t.choices!.isNotEmpty &&
                               t.choices?[0].message!.content != null)

@@ -21,7 +21,7 @@ class FeatureVoiceChatBloc
 
   StreamSubscription<VoiceSessionData>? _sessionSub;
 
-  // ✅ ذخیره آخرین دیتا برای اینکه موقع قطع/وصل میکروفون، انیمیشن خراب نشه
+  
   VoiceSessionData? _lastSessionData;
   bool _isMicEnabled = false;
 
@@ -62,7 +62,7 @@ class FeatureVoiceChatBloc
     });
 
     on<_InternalSessionDataUpdated>((event, emit) {
-      _lastSessionData = event.data; // ذخیره آخرین وضعیت
+      _lastSessionData = event.data; 
       emit(VoiceSessionActiveState(event.data, isMicEnabled: _isMicEnabled));
     });
 
@@ -70,7 +70,7 @@ class FeatureVoiceChatBloc
       emit(OperationErrorState("خطا در دریافت وضعیت زنده: ${event.message}"));
     });
 
-    // ✅ روشن کردن میکروفون بدون خاموش کردن انیمیشن
+    
     on<StartTalkingEvent>((event, emit) async {
       final DataState state = await enableMicUseCase(null);
       if (state is DataSuccess) {
@@ -83,7 +83,7 @@ class FeatureVoiceChatBloc
       }
     });
 
-    // ✅ قطع کردن میکروفون بدون خاموش کردن انیمیشن
+    
     on<StopTalkingEvent>((event, emit) async {
       final DataState state = await disableMicUseCase(null);
       if (state is DataSuccess) {
