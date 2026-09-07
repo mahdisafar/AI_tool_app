@@ -24,6 +24,9 @@ A Flutter application designed for daily AI-powered workflows: message rewriting
 
 
 
+
+
+
 ---
 
 ## Key Features
@@ -69,7 +72,7 @@ Converts raw text into structured task items (Title + Description) using system 
 Interactive streaming text chat leveraging Hugging Face (`Qwen/Qwen2.5-7B-Instruct`). Includes multi-chat archive drawer, conversation history, and prepared support for multimodal inputs (`image_url`).
 
 <p align="center">
-  <video src="[https://github.com/user-attachments/assets/71cdd154-b8c1-4126-9f83-b0bebd021574" width="360" controls playsinline muted></video>
+  <video src="https://github.com/user-attachments/assets/71cdd154-b8c1-4126-9f83-b0bebd021574" width="360" controls playsinline muted></video>
 </p>
 
 ---
