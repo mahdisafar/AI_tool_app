@@ -71,8 +71,8 @@ class ChatStreamApiProvider {
       final errorBytes = await errorStream.toList();
       final errorString = utf8.decode(errorBytes.expand((e) => e).toList());
 
-      debugPrint("❌ HF Server Error (${response.statusCode}): $errorString");
-      throw Exception("خطای سرور: $errorString");
+      debugPrint(" HF Server Error (${response.statusCode}): $errorString");
+      throw Exception("Error: $errorString");
     }
 
     final stream = response.data!.stream;
