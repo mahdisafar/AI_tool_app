@@ -99,4 +99,4 @@ Built following **Clean Architecture** principles structured by feature (`data`,
 * **Dependency Injection:** GetIt + Injectable
 * **Navigation:** GoRouter
 * **Local Storage:** Hive
-* **Networking & Realtime:** Dio, `dart_openai`, LiveKit 
+* **Networking & Realtime:** Dio, LiveKit 
