@@ -251,7 +251,4 @@ class FeatureAllChatArchicesbloc
   }
 }
 
-class RefreshMainchatsEvent extends FeatureChatEvent {
-  final String id;
-  const RefreshMainchatsEvent({required this.id});
-}
+
